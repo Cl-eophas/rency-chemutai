@@ -1,8 +1,31 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rencychemutai.com'
+
+export const metadata: Metadata = {
+  title: 'Dairy Farming Blog | Tips & Insights | Rency Chemutai',
+  description: 'Latest insights, tips, and best practices for dairy farmers. Learn about milk production, farm management, nutrition, and profitability.',
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
+  openGraph: {
+    type: 'website',
+    url: `${siteUrl}/blog`,
+    title: 'Dairy Farming Blog | Tips & Insights',
+    description: 'Latest insights and best practices for improving dairy farm productivity.',
+    images: [
+      {
+        url: `${siteUrl}/hero-desktop.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Blog - Dairy Farming Tips',
+      },
+    ],
+  },
+}
 
 const blogPosts = [
   {

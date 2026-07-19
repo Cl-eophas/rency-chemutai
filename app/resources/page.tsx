@@ -1,8 +1,31 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rencychemutai.com'
+
+export const metadata: Metadata = {
+  title: 'Dairy Farming Resources | Tools, Guides & Webinars',
+  description: 'Free guides, calculators, fact sheets, and videos to help you improve dairy farm management, nutrition, and profitability.',
+  alternates: {
+    canonical: `${siteUrl}/resources`,
+  },
+  openGraph: {
+    type: 'website',
+    url: `${siteUrl}/resources`,
+    title: 'Dairy Farming Resources | Tools & Guides',
+    description: 'Practical resources including guides, calculators, and webinars for dairy farmers.',
+    images: [
+      {
+        url: `${siteUrl}/hero-desktop.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Dairy Farming Resources',
+      },
+    ],
+  },
+}
 
 const resources = [
   {

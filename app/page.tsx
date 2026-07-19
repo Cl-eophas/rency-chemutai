@@ -1,9 +1,55 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rencychemutai.com'
+
+export const metadata: Metadata = {
+  title: 'Dairy Farming Consultant Kenya | Rency Chemutai',
+  description: 'Expert dairy farming consulting in Eldoret, Kenya. Boost milk production, farm profitability, and herd health with data-driven solutions. Free consultation available.',
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    title: 'Dairy Farming Consultant Kenya | Rency Chemutai',
+    description: 'Expert dairy farming consulting in Eldoret, Kenya. Boost milk production and farm profitability.',
+    images: [
+      {
+        url: `${siteUrl}/hero-desktop.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Rency Chemutai - Dairy Farming Consultant',
+      },
+    ],
+  },
+}
+
+// JSON-LD Schema for LocalBusiness
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': siteUrl,
+  name: 'Rency Chemutai Dairy Farming Consultant',
+  alternateName: 'Rency Chemutai Dairy Consulting',
+  description: 'Data-driven dairy farming consulting services in Eldoret, Kenya',
+  url: siteUrl,
+  email: 'rencychemutai@gmail.com',
+  telephone: '+254705535090',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Eldoret',
+    addressRegion: 'Uasin Gishu',
+    addressCountry: 'KE',
+  },
+  areaServed: 'KE',
+  priceRange: '$$',
+  image: `${siteUrl}/hero-desktop.png`,
+  serviceType: 'Dairy Farming Consulting',
+}
 
 export default function Page() {
   return (
@@ -298,6 +344,11 @@ export default function Page() {
             </p>
           </div>
         </section>
+        {/* JSON-LD Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
       </main>
       <Footer />
     </>

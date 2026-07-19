@@ -1,9 +1,32 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rencychemutai.com'
+
+export const metadata: Metadata = {
+  title: 'About Rency Chemutai | Dairy Farming Consultant',
+  description: 'Learn about Rency Chemutai, an agricultural economist from University of Eldoret with 5+ years of experience empowering dairy farmers in Kenya through data-driven solutions.',
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+  openGraph: {
+    type: 'website',
+    url: `${siteUrl}/about`,
+    title: 'About Rency Chemutai | Dairy Farming Consultant',
+    description: 'Agricultural economist with 5+ years experience improving dairy farm productivity and profitability.',
+    images: [
+      {
+        url: `${siteUrl}/hero-desktop.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Rency Chemutai - About',
+      },
+    ],
+  },
+}
 
 export default function AboutPage() {
   return (

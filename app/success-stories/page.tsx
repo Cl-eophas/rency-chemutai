@@ -1,7 +1,30 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rencychemutai.com'
+
+export const metadata: Metadata = {
+  title: 'Success Stories | Real Results From Dairy Farmers',
+  description: 'See how dairy farmers across Kenya transformed their operations with Rency Chemutai\'s consulting. Real results: increased milk production, reduced costs, higher profits.',
+  alternates: {
+    canonical: `${siteUrl}/success-stories`,
+  },
+  openGraph: {
+    type: 'website',
+    url: `${siteUrl}/success-stories`,
+    title: 'Success Stories | Real Results From Dairy Farmers',
+    description: 'Real case studies showing how farmers increased milk production and farm profitability.',
+    images: [
+      {
+        url: `${siteUrl}/hero-desktop.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Dairy Farm Success Stories',
+      },
+    ],
+  },
+}
 
 const stories = [
   {
