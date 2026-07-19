@@ -10,69 +10,79 @@ export default function Page() {
     <>
       <Header />
       <main className="bg-[#fbf9f2]">
-        {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-end md:items-center overflow-hidden">
-          {/* Background image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jul%2019%2C%202026%2C%2001_41_43%20AM-jROUeUbALOLS6RsSUMVFddL6I8My6Q.png"
-              alt="Rency Chemutai in a dairy farm"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0e2416] via-[#1a4a2c]/80 to-transparent opacity-60" />
+        {/* Hero Section - Responsive with Art-Directed Images */}
+        <section className="relative w-full min-h-screen lg:min-h-[100vh] flex flex-col lg:flex-row items-stretch overflow-hidden bg-[#0e2416]">
+          {/* Art-Directed Image Container */}
+          <div className="absolute inset-0 lg:relative lg:w-1/2 z-0 lg:z-10">
+            <picture>
+              <source
+                media="(min-width: 1024px)"
+                srcSet="/hero-desktop.png"
+              />
+              <source
+                media="(max-width: 1023px)"
+                srcSet="/hero-mobile.png"
+              />
+              <Image
+                src="/hero-desktop.png"
+                alt="Rency Chemutai, Dairy Farming Consultant, in a pastoral setting with cows"
+                fill
+                className="object-cover"
+                priority
+              />
+            </picture>
+            {/* Dark overlay - mobile only */}
+            <div className="absolute inset-0 lg:hidden bg-gradient-to-r from-[#0e2416] via-[#1a4a2c]/70 to-transparent" />
           </div>
 
-          {/* Hero content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 w-full">
-            <div className="max-w-2xl">
-              {/* Eyebrow */}
-              <div className="inline-block border border-[#a9c9ab] rounded-full px-3 py-1 mb-6 text-xs text-[#a9c9ab]">
+          {/* Content Container */}
+          <div className="relative z-20 w-full lg:w-1/2 flex items-center justify-center lg:justify-start p-6 sm:p-8 md:p-12">
+            <div className="max-w-xl w-full py-8 md:py-12">
+              {/* Eyebrow - No Duplicates */}
+              <div className="inline-block border border-[#a9c9ab] rounded-full px-3 py-1 mb-6 text-xs md:text-sm text-[#a9c9ab] font-medium">
                 ✓ EMPOWERING FARMERS. TRANSFORMING FARMS.
               </div>
 
-              {/* Headline */}
-              <h1 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-6 text-balance">
-                Stronger Farms.{' '}
-                <span className="block">Healthier Cows.</span>{' '}
+              {/* Headline - Single Instance */}
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance">
+                Stronger Farms.
+                <span className="block">Healthier Cows.</span>
                 <span className="text-[#c9a24b]">Better Tomorrows.</span>
               </h1>
 
               {/* Subhead */}
-              <p className="text-base md:text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-white/90 mb-8 max-w-xl leading-relaxed">
                 Data-driven solutions to improve productivity, profitability and sustainability for dairy farmers in Kenya and beyond.
               </p>
 
-              {/* CTAs */}
+              {/* CTAs - Proper Flex Row */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   href="/services"
-                  className="bg-[#a85c3f] hover:bg-[#8a4a32] text-white px-6 py-3 rounded-full font-medium text-center transition-colors inline-flex items-center justify-center gap-2"
+                  className="bg-[#a85c3f] hover:bg-[#8a4a32] text-white px-6 py-3 rounded-full font-medium text-center transition-colors"
                 >
                   Explore My Services →
                 </Link>
                 <a
                   href="#"
-                  className="border-2 border-white hover:border-[#c9a24b] text-white hover:text-[#c9a24b] px-6 py-3 rounded-full font-medium text-center transition-colors inline-flex items-center justify-center gap-2"
+                  className="border-2 border-white hover:border-[#c9a24b] text-white hover:text-[#c9a24b] px-6 py-3 rounded-full font-medium text-center transition-colors"
                 >
                   ▶ Watch Video
                 </a>
               </div>
 
-              {/* Stats strip */}
-              <div className="bg-[#0e2416]/80 backdrop-blur-sm rounded-lg p-4 md:p-6 grid grid-cols-3 gap-3 md:gap-6 text-center md:text-left md:flex md:justify-between">
-                <div>
-                  <div className="text-[#c9a24b] font-serif font-bold text-xl md:text-2xl">100+</div>
+              {/* Stats Strip - Responsive Grid */}
+              <div className="bg-[#0e2416]/80 backdrop-blur-sm rounded-lg p-4 md:p-6 grid grid-cols-3 gap-4">
+                <div className="text-center lg:text-left">
+                  <div className="text-[#c9a24b] font-serif font-bold text-lg md:text-2xl">100+</div>
                   <div className="text-xs md:text-sm text-white/80">Farmers Empowered</div>
                 </div>
-                <div>
-                  <div className="text-[#c9a24b] font-serif font-bold text-xl md:text-2xl">50K+</div>
+                <div className="text-center lg:text-left">
+                  <div className="text-[#c9a24b] font-serif font-bold text-lg md:text-2xl">50K+</div>
                   <div className="text-xs md:text-sm text-white/80">Cows Impacted</div>
                 </div>
-                <div>
-                  <div className="text-[#c9a24b] font-serif font-bold text-xl md:text-2xl">30%+</div>
+                <div className="text-center lg:text-left">
+                  <div className="text-[#c9a24b] font-serif font-bold text-lg md:text-2xl">30%+</div>
                   <div className="text-xs md:text-sm text-white/80">Increase in Productivity</div>
                 </div>
               </div>

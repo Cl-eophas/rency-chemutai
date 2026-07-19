@@ -141,7 +141,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-2 border border-[#f0f0f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3f8455] bg-white"
-                        placeholder="John Doe"
+                        placeholder="Wanjiru Kamau"
                       />
                     </div>
                     <div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-2 border border-[#f0f0f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3f8455] bg-white"
-                        placeholder="john@example.com"
+                        placeholder="wanjiru.kamau@gmail.com"
                       />
                     </div>
                   </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         value={formState.location}
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-[#f0f0f0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3f8455] bg-white"
-                        placeholder="County/Region"
+                        placeholder="Uasin Gishu County"
                       />
                     </div>
                   </div>
