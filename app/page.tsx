@@ -62,16 +62,12 @@ export default function Page() {
           <div className="absolute inset-0 lg:relative lg:w-1/2 z-0 lg:z-10">
             <picture>
               <source
-                media="(min-width: 1024px)"
-                srcSet="/hero-desktop.png"
-              />
-              <source
-                media="(max-width: 1023px)"
-                srcSet="/hero-mobile.png"
+                media="(max-width: 900px)"
+                srcSet="/office-hero-mobile.png"
               />
               <Image
-                src="/hero-desktop.png"
-                alt="Rency Chemutai, Dairy Farming Consultant, in a pastoral setting with cows"
+                src="/office-hero-desktop.png"
+                alt="Rency Chemutai - Dairy Farming Consultant working at her desk"
                 fill
                 className="object-cover"
                 priority

@@ -102,7 +102,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-[#3f8455] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#a9c9ab]">
-          <p>© 2026 Rency Chemutai Dairy Consulting. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <p>© 2026 Rency Chemutai Dairy Consulting. All rights reserved.</p>
+            <span className="text-[#3f8455] text-opacity-60">Built by KoinX</span>
+          </div>
           <div className="flex gap-4">
             <Link href="/terms" className="hover:text-[#c9a24b] transition-colors">
               Terms of Service
